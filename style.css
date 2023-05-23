@@ -1,0 +1,247 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    background-color: rgb(76, 148, 255);
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.wrapper li {
+    list-style-type: none;
+    border-radius: 5px;
+    margin: 15px 0px 20px 20px;
+}
+
+.elips {
+    cursor: pointer;
+}
+
+.addbtn {
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 250px;
+    height: 250px;
+}
+
+.addbtn > div {
+    font-size: 20px;
+    color: #8d8e91;
+}
+
+.icon {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 3px dashed #8d8e91;
+    border-radius: 50%;
+    margin: 19px;
+}
+
+.fa-plus {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 41px;
+}
+
+.note-pad {
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px 30px;
+    position: relative;
+    width: 190px;
+    height: 230px;
+}
+
+.note-pad h2 {
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+    padding-bottom: -30px;
+}
+
+.desc {
+    color: #8d8e91;
+    position: relative;
+    top: -5px;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.note-pad-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #cfcfcf;
+    padding-top: 15px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.note-pad-bottom p {
+    font-size: 10px;
+    font-style: italic;
+    color: #808080;
+}
+
+
+.panel {
+    position: absolute;
+    bottom: 17px;
+    right: 20px;
+    width: 120px;
+    height: 100px;
+    border-radius: 3px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    background-color: white;
+    cursor: pointer;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease;
+}
+
+.settings.show .panel {
+    transform: scale(1);
+}
+
+.fa-ellipsis {
+    color: #808080;
+    cursor: pointer;
+}
+
+
+.panel div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50px;
+    width: 120px;
+}
+
+.panel div:nth-child(odd) {
+    border-bottom: 1px solid #eeeeee;
+}
+
+.panel div:hover {
+    background-color: #cccccc;
+}
+
+.panel div i {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+}
+
+.panel div span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+}
+
+.popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    max-width: 100%;
+    height: 480px;
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: 1px solid #c9cacc;
+    margin: 5px;
+}
+
+.popup-box, .popup-box .popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.popup-box.show, .popup-box.show .popup {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.fa-xmark {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.popup--head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #8d8e91;
+}
+
+.popup--mid {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.popup--bottom {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    border: 1px solid black;
+    outline: none;
+    resize: none;
+}
+
+input {
+    border: 1px solid black;
+    height: 30px;
+    outline: none;
+    width: 100%;
+}
+
+button {
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    font-size: 19px;
+    cursor: pointer;
+    background-color: rgb(76, 148, 255);
+    border: none;
+    color: white;
+}
+
+/*A little media queries*/
+@media only screen and (max-width: 500px){
+    .popup-box {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .popup-box {
+        width: 250px;
+    }
+}
